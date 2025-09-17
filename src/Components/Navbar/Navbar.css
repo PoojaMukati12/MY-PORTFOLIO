@@ -1,0 +1,129 @@
+  /* color: rgba(3, 255, 255, 1); */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 48px;
+  background-color: black; /* Navbar stays black */
+  color: white;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoicon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* background: #007bff; */
+  background-color: rgba(3, 255, 255, 1);;
+  color:black;
+  font-size: 20px;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.logoicon:hover {
+  background: rgba(3, 255, 255, 1);;      
+  transform: scale(1.2);
+}
+.namelogo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Menu - Desktop */
+.menubar {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 54px;
+  list-style: none;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.menu-item a:hover {
+  color: rgba(3, 255, 255, 1);
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Mobile Menu Dropdown Style */
+@media (max-width: 768px) {
+  .menubar {
+    display: none; /* hidden by default */
+    position: absolute;
+    top: 60px; /* appears below navbar */
+    right: 20px;
+    background-color: white; /* white dropdown background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    flex-direction: column;
+    width: 160px;
+    z-index: 999;
+  }
+
+  .menubar.open {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .menu-item a {
+    font-size: 16px;
+    color: black; 
+    padding: 8px 16px;
+    display: block;
+  }
+
+  .menu-item a:hover {
+    background: #f0f0f0;
+    border-radius: 4px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

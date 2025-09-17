@@ -1,0 +1,187 @@
+/* Base styles for the entire page (Mobile-first) */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main container with fluid width */
+.mainbox {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border-radius: 12px;
+}
+
+/* Heading with animation */
+.nice {
+  text-align: center;
+  font-size: 1.8rem; /* Smaller font size for mobile */
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeIn 4.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container for summary and image (stacked on mobile) */
+.uperbox {
+  display: flex;
+  flex-direction: column; /* Stacks items vertically on mobile */
+  align-items: center;
+  gap: 30px; /* Spacing between elements */
+  margin: 20px 0;
+}
+
+/* Summary text box */
+.summarybox {
+  padding: 0;
+  text-align: center;
+}
+
+.summarybox h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #03ffff;
+}
+
+.summarybox p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Image container */
+.imagebox {
+  width: 100%; /* Take full width of parent on mobile */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagebox img {
+  width: 150px; /* Fixed size for mobile image */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 4px solid #fff;
+}
+
+/* Lower section with social links */
+.lowerbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22px;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.find {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #03ffff;
+}
+
+.feel {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.touchme {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows icons to wrap on multiple lines on smaller screens */
+}
+
+.touchme a {
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 30px; /* Scaled down icons for mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.touchme a:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+}
+
+/* Specific hover colors (no change) */
+.touchme a:nth-child(1):hover { background: #333; color: #fff; }
+.touchme a:nth-child(2):hover { background: #0077b5; color: #fff; }
+.touchme a:nth-child(3):hover { background: #cc0b2f; color: #fff; }
+.touchme a:nth-child(4):hover { background: #ea4335; color: #fff; }
+
+/* Media query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+  .nice {
+    font-size: 3rem; /* Larger font size for desktop */
+    margin-bottom: 80px;
+  }
+  
+  .uperbox {
+    flex-direction: row; /* Switches to horizontal layout */
+    margin: 45px 0;
+  }
+
+  .summarybox {
+    text-align: left;
+    padding-right: 45px;
+    padding-left: 20px;
+  }
+
+  .summarybox h2 {
+    font-size: 32px;
+  }
+  
+  .summarybox p {
+    font-size: 16px;
+  }
+
+  .imagebox img {
+    width: 200px; /* Restores larger size for desktop */
+    height: 200px;
+  }
+  
+  .lowerbox {
+    margin-top: 58px;
+    padding: 40px 20px;
+  }
+  
+  .find {
+    font-size: 2.4rem;
+  }
+  
+  .feel {
+    font-size: 18px;
+  }
+  
+  .touchme a {
+    width: 46px; /* Restores icon size for desktop */
+    height: 46px;
+    font-size: 40px;
+  }
+}

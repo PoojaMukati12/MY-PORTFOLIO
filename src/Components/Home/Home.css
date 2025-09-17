@@ -1,0 +1,145 @@
+/* Global styles for a cleaner base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif; /* Using Inter for a modern look */
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Base styles for the profile section (Mobile-first) */
+.profileSection {
+  display: flex;
+  flex-direction: column; /* Stacks items on mobile */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px; /* Add some padding for all devices */
+}
+
+/* Styles for the text content */
+.profile {
+  text-align: center;
+  margin-bottom: 40px; /* Space between text and image on mobile */
+  padding: 0 10px;
+}
+
+.profile h4 {
+  font-size: 1.5rem; /* Use rem for scalable font size */
+  margin-bottom: 15px;
+}
+
+.wave-hand {
+  display: inline-block;
+  font-size: 2rem;
+  animation: wave 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.profile h3 {
+  font-size: 2.5rem;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.developer {
+  font-size: 1.8rem;
+  font-weight: bold;
+  height: 40px; /* Adjust height for mobile */
+  line-height: 1.2;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.animated-role {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: rgba(3, 255, 255, 1);
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Styles for the profile image */
+.profileimage img {
+  width: 100%; /* Image takes full width of its container on mobile */
+  height: auto;
+  max-width: 400px; /* Limit max size for tablets/desktops */
+  object-fit: contain;
+}
+
+
+/* Media query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+  .profileSection {
+    flex-direction: row; /* Switches to a row layout */
+    justify-content: space-between;
+    padding: 50px;
+    text-align: left;
+  }
+
+  .profile {
+    margin-left: 50px;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  
+  .profile h4 {
+    font-size: 28px;
+  }
+
+  .profile h3 {
+    font-size: 40px;
+  }
+  
+  .developer {
+    font-size: 44px;
+    height: 60px;
+    text-align: left;
+    width: 590px;
+  }
+
+  .profileimage {
+    padding-right: 50px;
+  }
+
+  .profileimage img {
+    width: 680px;
+    height: 620px;
+    max-width: none; /* Let the original size be the max on desktop */
+  }
+}

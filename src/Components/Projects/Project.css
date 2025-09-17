@@ -1,0 +1,163 @@
+/* Global styles for a cleaner base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Base styles for the project section (Mobile-first) */
+.projectsec {
+  width: 100%;
+  padding: 40px 20px; /* Increased vertical padding for mobile */
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Project section heading */
+.projecthead {
+  font-size: 2.2rem; /* Scalable font size for mobile */
+  font-weight: bold;
+  margin-bottom: 30px; /* Smaller margin for mobile */
+  color: #03ffff;
+  text-align: center;
+}
+
+/* Container for all project cards */
+.projectcon {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout for mobile */
+  gap: 30px; /* Reduced gap for mobile */
+  width: 100%;
+  max-width: 1200px; /* Max width to prevent it from getting too wide on large screens */
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+/* Individual project card */
+.projectcard {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px; /* Increased padding */
+  box-shadow: 0 0 10px rgba(18, 220, 220, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Removed fixed height so cards can grow with content */
+  width: 100%;
+}
+
+.projectcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(5, 233, 233, 0.2);
+}
+
+.projectcard img {
+  width: 100%;
+  height: auto; /* Important: maintains aspect ratio */
+  max-height: 200px; /* Prevent images from getting too tall */
+  object-fit: contain;
+  margin-bottom: 20px;
+  border-radius: 8px; /* Added border-radius to match cards */
+}
+
+.Projecttitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #03ffff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.projectcard p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #dcdcdc;
+  text-align: center;
+  margin-bottom: 20px; /* More space below the paragraph */
+}
+
+.projectcard a {
+  background-color: #03ffff;
+  color: #121212;
+  padding: 10px 22px; /* Increased padding for better touch targets */
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: auto; /* Pushes the button to the bottom of the card */
+}
+
+.projectcard a:hover {
+  background-color: #00cccc;
+}
+
+.buttons {
+  display: flex; /* Makes the buttons sit side-by-side */
+  gap: 15px; /* Adds space between the buttons */
+  margin-top: 15px; /* Adds space between the paragraph and the buttons */
+}
+
+.buttons a {
+  display: inline-flex; /* Allows for both icon and text on the same line */
+  align-items: center; /* Vertically aligns the icon and text */
+  padding: 10px 20px; /* Adds internal padding for a larger button size */
+  border-radius: 8px; /* Gives the buttons rounded corners */
+  text-decoration: none; /* Removes the underline from the links */
+  font-weight: bold; /* Makes the button text bold */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.buttons a:hover {
+  background-color: #333; /* Darkens the button on hover */
+}
+
+/* Media query for tablets and larger screens */
+@media (min-width: 768px) {
+  .projectsec {
+    padding: 50px 40px;
+  }
+  
+  .projecthead {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+  }
+
+  .projectcon {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets/laptops */
+    gap: 40px;
+  }
+}
+
+/* Media query for large desktops */
+@media (min-width: 1024px) {
+  .projectcon {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for large desktops */
+    gap: 50px;
+  }
+  
+  .projectcard img {
+    max-height: 250px;
+  }
+}
