@@ -16,7 +16,7 @@ function App() {
    
     <BrowserRouter>
     <Routes>
-      <Route  path='/my-portfolio/' element={ 
+      <Route  path='/' element={ 
         <>
         <Navbar/>
         <Home/>
