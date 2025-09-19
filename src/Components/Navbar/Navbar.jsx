@@ -1,30 +1,3 @@
-// import React from 'react'
-// import './Navbar.css'
-// import { Link } from 'react-router-dom'
-
-
-// const Navbar = () => {
-//   return (
-//     <div className='navbar'>
-//         <div className="logo">
-//             <span className='logoicon'>P</span>
-//             <span className='namelogo'>Pooja Mukati</span>
-//         </div>
-//         <div className="menubar">
-//             <ul className='menu'>
-//                 <li className='menu-item'><Link to='/my-portfolio/'>HOME🏠</Link></li>
-//                 <li className='menu-item'><Link to='/my-portfolio/about'>ABOUT💁‍♀️</Link></li>
-//                 <li className='menu-item'><Link to='/my-portfolio/projects'>PROJECTS💻</Link></li>
-//                 <li className='menu-item'><Link to='/my-portfolio/contacts'>CONTACTS📞</Link></li>
-//             </ul>
-//         </div>
-//     </div>
-
-//   )
-// }
-
-// export default Navbar
-
 import React, { useState } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
@@ -53,10 +26,10 @@ const Navbar = () => {
             {/* Menu links */}
             <div className={`menubar ${isOpen ? 'open' : ''}`}>
                 <ul className='menu'>
-                    <li className='menu-item' onClick={toggleMenu}><Link to='/my-portfolio/'>HOME🏠</Link></li>
-                    <li className='menu-item' onClick={toggleMenu}><Link to='/my-portfolio/about'>ABOUT💁‍♀️</Link></li>
-                    <li className='menu-item' onClick={toggleMenu}><Link to='/my-portfolio/projects'>PROJECTS💻</Link></li>
-                    <li className='menu-item' onClick={toggleMenu}><Link to='/my-portfolio/contacts'>CONTACTS📞</Link></li>
+                    <li className='menu-item' onClick={toggleMenu}><Link to='/'>HOME🏠</Link></li>
+                    <li className='menu-item' onClick={toggleMenu}><Link to='/about'>ABOUT💁‍♀️</Link></li>
+                    <li className='menu-item' onClick={toggleMenu}><Link to='/projects'>PROJECTS💻</Link></li>
+                    <li className='menu-item' onClick={toggleMenu}><Link to='/contacts'>CONTACTS📞</Link></li>
                 </ul>
             </div>
         </nav>

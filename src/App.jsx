@@ -7,41 +7,36 @@ import About from './Components/About/About'
 import Project from './Components/Projects/Project'
 import Contact from './Components/Contact/Contact'
 
-
 function App() {
-  
-   
   return (
     <>
-   
-    <BrowserRouter>
-    <Routes>
-      <Route  path='/' element={ 
-        <>
-        <Navbar/>
-        <Home/>
-        </>
-      }/>
-      <Route path='/my-portfolio/about' element={
-        <>
-         <Navbar/>
-          <About/>
-        </>
-      }/>
-      <Route path='/my-portfolio/projects' element={
-        <>
+    <BrowserRouter basename="/my-portfolio">
+      <Routes>
+        <Route path='/' element={
+          <>
           <Navbar/>
-          <Project/>
-        </>
+          <Home/>
+          </>
         }/>
-      <Route path='/my-portfolio/contacts' element={
-        <>
-          <Navbar/>
-          <Contact/>
-        </>
-        
-      }/>
-    </Routes>
+        <Route path='/about' element={
+          <>
+            <Navbar/>
+            <About/>
+          </>
+        }/>
+        <Route path='/projects' element={
+          <>
+            <Navbar/>
+            <Project/>
+          </>
+          }/>
+        <Route path='/contacts' element={
+          <>
+            <Navbar/>
+            <Contact/>
+          </>
+        }/>
+      </Routes>
     </BrowserRouter> 
     </>
   )
