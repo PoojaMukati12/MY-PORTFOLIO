@@ -10,7 +10,7 @@ import Contact from './Components/Contact/Contact'
 function App() {
   return (
     <>
-    <BrowserRouter basename="/my-portfolio">
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={
           <>
